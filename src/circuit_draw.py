@@ -17,7 +17,8 @@ def desenhar_circuito(nos, elementos):
         pos1 = posicoes_nos[no1]
         pos2 = posicoes_nos[no2]
         if tipo == 'R':
-            d += elm.Resistor().at(pos1).to(pos2).label(f"{valor}Ω")
+            d += elm.Resistor().at(pos1).to(pos2).label(f"{valor} Ohms")
         elif tipo == 'V':
-            d += elm.SourceV().at(pos1).to(pos2).label(f"{valor}V")
+            d += elm.SourceV().at(pos1).to(pos2).label(f"{valor} V")
+
     d.draw()

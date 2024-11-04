@@ -7,7 +7,11 @@ def main():
     nos, elementos = coletar_dados_usuario()
     
     # Cálculo das correntes e tensões
-    tensoes_nos, correntes_elementos = calcular_correntes(nos, elementos)
+    try:
+        tensoes_nos, correntes_elementos = calcular_correntes(nos, elementos)
+    except Exception as e:
+        print(f"Erro ao calcular correntes e tensões: {e}")
+        return
     
     # Desenho do circuito
     desenhar_circuito(nos, elementos)
